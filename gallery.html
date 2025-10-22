@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Art Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+        }
+        
+        .art-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .art-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .art-image {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .page-title {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .similar-art {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .art-detail-img {
+            max-height: 400px;
+            object-fit: contain;
+            width: 100%;
+        }
+        
+        .btn-simple {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-simple:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Simple Art Gallery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signup">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="page-content">
+            <div class="hero-section">
+                <h1>Welcome to Simple Art Gallery</h1>
+                <p class="lead">Discover beautiful artworks from talented artists around the world</p>
+                <a href="#gallery" class="btn btn-primary btn-lg">Explore Gallery</a>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card art-card">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Abstract Art">
+                        <div class="card-body">
+                            <h5 class="card-title">Abstract Composition</h5>
+                            <p class="card-text">By Jackson Pollock</p>
+                            <a href="#gallery" class="btn btn-simple">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card art-card">
+                        <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Surreal Art">
+                        <div class="card-body">
+                            <h5 class="card-title">Surreal Landscape</h5>
+                            <p class="card-text">By Salvador Dali</p>
+                            <a href="#gallery" class="btn btn-simple">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card art-card">
+                        <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Impressionist Art">
+                        <div class="card-body">
+                            <h5 class="card-title">Water Lilies</h5>
+                            <p class="card-text">By Claude Monet</p>
+                            <a href="#gallery" class="btn btn-simple">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">Simple Art Gallery &copy; 2023 - A College Project</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const pages = {
+            home: `
+                <div class="hero-section">
+                    <h1>Welcome to Simple Art Gallery</h1>
+                    <p class="lead">Discover beautiful artworks from talented artists around the world</p>
+                    <a href="#gallery" class="btn btn-primary btn-lg">Explore Gallery</a>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card art-card">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Abstract Art">
+                            <div class="card-body">
+                                <h5 class="card-title">Abstract Composition</h5>
+                                <p class="card-text">By Jackson Pollock</p>
+                                <a href="#gallery" class="btn btn-simple">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card art-card">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Surreal Art">
+                            <div class="card-body">
+                                <h5 class="card-title">Surreal Landscape</h5>
+                                <p class="card-text">By Salvador Dali</p>
+                                <a href="#gallery" class="btn btn-simple">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card art-card">
+                            <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Impressionist Art">
+                            <div class="card-body">
+                                <h5 class="card-title">Water Lilies</h5>
+                                <p class="card-text">By Claude Monet</p>
+                                <a href="#gallery" class="btn btn-simple">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            login: `
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h2 class="page-title">Login</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                    <button type="submit" class="btn btn-simple w-100">Login</button>
+                                </form>
+                                <div class="mt-3 text-center">
+                                    <p>Don't have an account? <a href="#signup">Sign up here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            signup: `
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h2 class="page-title">Sign Up</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="fullName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="fullName">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="confirmPassword">
+                                    </div>
+                                    <button type="submit" class="btn btn-simple w-100">Sign Up</button>
+                                </form>
+                                <div class="mt-3 text-center">
+                                    <p>Already have an account? <a href="#login">Login here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            gallery: `
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="page-title">Art Gallery</h1>
+                        <p class="text-center">Browse our collection of art pieces.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="card art-card">
+                                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Starry Night">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Starry Night</h5>
+                                        <p class="card-text">By Vincent van Gogh</p>
+                                        <a href="#art1" class="btn btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card art-card">
+                                    <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Girl with a Pearl Earring">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Girl with a Pearl Earring</h5>
+                                        <p class="card-text">By Johannes Vermeer</p>
+                                        <a href="#art2" class="btn btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card art-card">
+                                    <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="The Persistence of Memory">
+                                    <div class="card-body">
+                                        <h5 class="card-title">The Persistence of Memory</h5>
+                                        <p class="card-text">By Salvador Dali</p>
+                                        <a href="#art3" class="btn btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card art-card">
+                                    <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="The Scream">
+                                    <div class="card-body">
+                                        <h5 class="card-title">The Scream</h5>
+                                        <p class="card-text">By Edvard Munch</p>
+                                        <a href="#art4" class="btn btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card art-card">
+                                    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="Water Lilies">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Water Lilies</h5>
+                                        <p class="card-text">By Claude Monet</p>
+                                        <a href="#art5" class="btn btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card art-card">
+                                    <img src="https://images.unsplash.com/photo-1578321272177-44c5295c4c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top art-image" alt="The Kiss">
+                                    <div class="card-body">
+                                        <h5 class="card-title">The Kiss</h5>
+                                        <p class="card-text">By Gustav Klimt</p>
+                                        <a href="#art6" class="btn btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            art1: `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded art-detail-img" alt="Starry Night">
+                    </div>
+                    <div class="col-md-6">
+                        <h1>Starry Night</h1>
+                        <p><strong>Artist:</strong> Vincent van Gogh</p>
+                        <p><strong>Year:</strong> 1889</p>
+                        <p><strong>Description:</strong> The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village.</p>
+                        
+                        <h3 class="mt-4">Similar Art Pieces</h3>
+                        <div class="similar-art">
+                            <h5>The Night Cafe</h5>
+                            <p>By Vincent van Gogh, 1888</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>Wheatfield with Cypresses</h5>
+                            <p>By Vincent van Gogh, 1889</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>Irises</h5>
+                            <p>By Vincent van Gogh, 1889</p>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-simple mt-3">Back to Gallery</a>
+                    </div>
+                </div>
+            `,
+            art2: `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded art-detail-img" alt="Girl with a Pearl Earring">
+                    </div>
+                    <div class="col-md-6">
+                        <h1>Girl with a Pearl Earring</h1>
+                        <p><strong>Artist:</strong> Johannes Vermeer</p>
+                        <p><strong>Year:</strong> 1665</p>
+                        <p><strong>Description:</strong> Girl with a Pearl Earring is an oil painting by Dutch Golden Age painter Johannes Vermeer. It is a tronie of a girl with a headscarf and a pearl earring. The painting has been in the collection of the Mauritshuis in The Hague since 1902 and has been the subject of various literary and cinematic treatments.</p>
+                        
+                        <h3 class="mt-4">Similar Art Pieces</h3>
+                        <div class="similar-art">
+                            <h5>The Milkmaid</h5>
+                            <p>By Johannes Vermeer, 1657-1658</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>Woman with a Water Jug</h5>
+                            <p>By Johannes Vermeer, 1660-1662</p>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-simple mt-3">Back to Gallery</a>
+                    </div>
+                </div>
+            `,
+            art3: `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded art-detail-img" alt="The Persistence of Memory">
+                    </div>
+                    <div class="col-md-6">
+                        <h1>The Persistence of Memory</h1>
+                        <p><strong>Artist:</strong> Salvador Dali</p>
+                        <p><strong>Year:</strong> 1931</p>
+                        <p><strong>Description:</strong> The Persistence of Memory is a 1931 painting by artist Salvador Dalí, and is one of his most recognizable works. The well-known surrealist piece introduces the image of the soft melting pocket watch. It epitomizes Dalí's theory of "softness" and "hardness", which was central to his thinking at the time.</p>
+                        
+                        <h3 class="mt-4">Similar Art Pieces</h3>
+                        <div class="similar-art">
+                            <h5>The Elephants</h5>
+                            <p>By Salvador Dali, 1948</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>Metamorphosis of Narcissus</h5>
+                            <p>By Salvador Dali, 1937</p>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-simple mt-3">Back to Gallery</a>
+                    </div>
+                </div>
+            `,
+            art4: `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded art-detail-img" alt="The Scream">
+                    </div>
+                    <div class="col-md-6">
+                        <h1>The Scream</h1>
+                        <p><strong>Artist:</strong> Edvard Munch</p>
+                        <p><strong>Year:</strong> 1893</p>
+                        <p><strong>Description:</strong> The Scream is a composition created by Norwegian artist Edvard Munch in 1893. The agonized face in the painting has become one of the most iconic images of art, seen as symbolizing the anxiety of the human condition. Munch created several versions of The Scream in various media.</p>
+                        
+                        <h3 class="mt-4">Similar Art Pieces</h3>
+                        <div class="similar-art">
+                            <h5>Anxiety</h5>
+                            <p>By Edvard Munch, 1894</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>Madonna</h5>
+                            <p>By Edvard Munch, 1894-1895</p>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-simple mt-3">Back to Gallery</a>
+                    </div>
+                </div>
+            `,
+            art5: `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded art-detail-img" alt="Water Lilies">
+                    </div>
+                    <div class="col-md-6">
+                        <h1>Water Lilies</h1>
+                        <p><strong>Artist:</strong> Claude Monet</p>
+                        <p><strong>Year:</strong> 1914-1926</p>
+                        <p><strong>Description:</strong> Water Lilies is a series of approximately 250 oil paintings by French Impressionist Claude Monet. The paintings depict his flower garden at his home in Giverny, and were the main focus of his artistic production during the last thirty years of his life. Many of the works were painted while Monet suffered from cataracts.</p>
+                        
+                        <h3 class="mt-4">Similar Art Pieces</h3>
+                        <div class="similar-art">
+                            <h5>Impression, Sunrise</h5>
+                            <p>By Claude Monet, 1872</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>Haystacks</h5>
+                            <p>By Claude Monet, 1890-1891</p>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-simple mt-3">Back to Gallery</a>
+                    </div>
+                </div>
+            `,
+            art6: `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1578321272177-44c5295c4c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded art-detail-img" alt="The Kiss">
+                    </div>
+                    <div class="col-md-6">
+                        <h1>The Kiss</h1>
+                        <p><strong>Artist:</strong> Gustav Klimt</p>
+                        <p><strong>Year:</strong> 1907-1908</p>
+                        <p><strong>Description:</strong> The Kiss is an oil-on-canvas painting with added gold leaf, silver and platinum by the Austrian Symbolist painter Gustav Klimt. It was painted at some point in 1907 and 1908, during the height of what scholars call his "Golden Period".</p>
+                        
+                        <h3 class="mt-4">Similar Art Pieces</h3>
+                        <div class="similar-art">
+                            <h5>Portrait of Adele Bloch-Bauer I</h5>
+                            <p>By Gustav Klimt, 1907</p>
+                        </div>
+                        <div class="similar-art">
+                            <h5>The Tree of Life</h5>
+                            <p>By Gustav Klimt, 1905</p>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-simple mt-3">Back to Gallery</a>
+                    </div>
+                </div>
+            `
+        };
+
+        function loadPage(pageId) {
+            const content = pages[pageId] || pages.home;
+            document.getElementById('page-content').innerHTML = content;
+            
+            document.getElementById('page-content').classList.add('fade-in');
+            setTimeout(() => {
+                document.getElementById('page-content').classList.remove('fade-in');
+            }, 1000);
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('hashchange', function() {
+            const pageId = window.location.hash.substring(1);
+            loadPage(pageId);
+        });
+
+        window.onload = function() {
+            const pageId = window.location.hash.substring(1) || 'home';
+            loadPage(pageId);
+        };
+    </script>
+</body>
+</html>
